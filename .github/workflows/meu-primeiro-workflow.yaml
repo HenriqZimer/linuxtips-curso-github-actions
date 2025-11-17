@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Confere versão ubuntu
         run: cat /etc/os-release
+      - name: teste
+        run: curl http://prunus.tecnologia.ws/pt/admin/aniversariante/enviarEmail
 
       - name: Exibir uma mensagem
         run: echo "Estou fazendo o curso de Github Actions da Linuxtips"
