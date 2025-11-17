@@ -28,6 +28,7 @@ jobs:
       - name: Rodando a Imagem Docker no Scout
         uses: docker/scout-action@v1.18.2  # Atualizado para a versão mais recente
         with:
+          command: quickview
           image: ${{ github.event.inputs.name }}
           dockerhub-user: ${{ secrets.DOCKER_HUB_USERNAME }}
           dockerhub-password: ${{ secrets.DOCKER_HUB_PASSWORD }}
