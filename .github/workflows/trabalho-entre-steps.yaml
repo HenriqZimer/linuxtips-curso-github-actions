@@ -11,12 +11,9 @@ jobs:
     steps:
       - name: Confere versão ubuntu
         run: cat /etc/os-release
-
       - name: Exibir uma mensagem
         run: echo "Estou fazendo o curso de Github Actions da Linuxtips" > mensagem.txt
-
       - name: Qualquer outra coisa
         run: ls -lha
-
       - name: Le o conteudo do arquivo
         run: cat mensagem.txt
