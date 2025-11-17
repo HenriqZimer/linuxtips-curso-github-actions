@@ -1,4 +1,4 @@
-name: Primeiro Workflow Linuxtips
+name: Day 1 - Primeiro Workflow Linuxtips
 
 on: workflow_dispatch
 

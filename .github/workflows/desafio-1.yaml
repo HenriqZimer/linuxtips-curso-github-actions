@@ -1,4 +1,4 @@
-name: Desafio 1
+name: Day 1 - Desafio 1
 
 on:
   workflow_dispatch:
@@ -26,7 +26,7 @@ jobs:
         run: |
           docker images ${{ github.event.inputs.name }}
       - name: Rodando a Imagem Docker no Scout
-        uses: docker/scout-action@v1.18.2  # Atualizado para a versão mais recente
+        uses: docker/scout-action@v1.18.2 # Atualizado para a versão mais recente
         with:
           command: quickview
           image: ${{ github.event.inputs.name }}
