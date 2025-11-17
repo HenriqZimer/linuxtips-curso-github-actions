@@ -1,0 +1,16 @@
+name: Desafio 1
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        type: string
+        description: Input para a Imagem Docker
+        required: true
+jobs:
+  desafio-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Input para a Imagem Docker
+        run: |
+          echo "${{ github.event.inputs.name }}"
