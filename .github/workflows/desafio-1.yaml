@@ -14,3 +14,9 @@ jobs:
       - name: Input para a Imagem Docker
         run: |
           echo "${{ github.event.inputs.name }}"
+      - name: Baixando a Imagem Docker
+        run: |
+          docker pull ${{ github.event.inputs.name }}
+      - name: Listando a Imagem Docker
+        run: |
+          docker images ${{ github.event.inputs.name }}
