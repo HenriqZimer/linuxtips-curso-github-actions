@@ -1,4 +1,4 @@
-name: Trabalho entre Steps
+name: Trabalho entre Jobs
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  entre-steps:
+  job-1:
     runs-on: ubuntu-latest
     steps:
       - name: Confere versão ubuntu
@@ -18,5 +18,10 @@ jobs:
       - name: Qualquer outra coisa
         run: ls -lha
 
+  job-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confere versão ubuntu
+        run: cat /etc/os-release
       - name: Le o conteudo do arquivo
         run: cat mensagem.txt
