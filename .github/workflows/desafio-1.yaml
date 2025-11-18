@@ -3,7 +3,7 @@ name: Day 1 - Desafio 1
 on:
   workflow_dispatch:
     inputs:
-      name:
+      name-image-docker:
         type: string
         description: Input para a Imagem Docker
         required: true
@@ -11,24 +11,17 @@ jobs:
   desafio-1:
     runs-on: ubuntu-latest
     steps:
-      - name: Input para a Imagem Docker
-        run: |
-          echo "${{ github.event.inputs.name }}"
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      - name: Checkout Repository
+        uses: actions/checkout@v4
       - name: Baixando a Imagem Docker
         run: |
-          docker pull ${{ github.event.inputs.name }}
+          docker pull ${{ github.event.inputs.name-image-docker }}
       - name: Listando a Imagem Docker
         run: |
-          docker images ${{ github.event.inputs.name }}
+          docker images ${{ github.event.inputs.name-image-docker }}
       - name: Rodando a Imagem Docker no Scout
         uses: docker/scout-action@v1.18.2 # Atualizado para a versão mais recente
         with:
           command: quickview
-          image: ${{ github.event.inputs.name }}
-          dockerhub-user: ${{ secrets.DOCKER_HUB_USERNAME }}
-          dockerhub-password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          image: ${{ github.event.inputs.name-image-docker }}
+          only-severities: "CRITICAL,HIGH"

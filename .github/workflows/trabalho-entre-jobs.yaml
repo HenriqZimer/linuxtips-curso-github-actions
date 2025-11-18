@@ -1,9 +1,6 @@
 name: Day 1 - Trabalho entre Jobs
 
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
 
 jobs:
   job-1:

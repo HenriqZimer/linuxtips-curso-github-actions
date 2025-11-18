@@ -1,9 +1,6 @@
 name: Day 1 - Trabalho entre Steps
 
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
 
 jobs:
   entre-steps:
